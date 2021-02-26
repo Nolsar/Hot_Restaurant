@@ -45,6 +45,28 @@
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script type="text/javascript">
+
+
+      $.get("/api/tableData", function(data) {
+
+
+        for(var i=0; i<data.length;i++){
+          console.log(data[i]);
+          var customer =`
+          <div>
+          <h3>${data[i].name}</h3>
+          <h3>${data[i].email}</h3>
+          <h3>${data[i].phone}</h3>
+          <h3>${data[i].id}</h3>
+          </div>
+          `
+          $(".card-body").append(customer);
+        }
+      });
+
+  </script>
 </body>
 
 </html>

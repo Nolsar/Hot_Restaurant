@@ -28,4 +28,17 @@ router.get("/api/tableData", function (req, res) {
     return res.json(tableData);
 });
 
+router.post("/api/tableData", function (req, res) {
+
+    var newCustomer = req.body;
+
+
+    newCustomer.routeName = newCustomer.name.replace(/\s+/g, "").toLowerCase();
+
+
+
+    tableData.push(newCustomer);
+
+    res.json(newCustomer);
+});
 module.exports=router;
