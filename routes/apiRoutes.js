@@ -1,10 +1,4 @@
-const { Router } = require("express");
-
-var express = require("express").Router();
-
-
-
-
+var router = require("express").Router();
 
 const tableData = [
     {
@@ -33,9 +27,5 @@ const tableData = [
 router.get("/api/tableData", function (req, res) {
     return res.json(tableData);
 });
-
-// // Displays a single character, or returns false
-// Router.get("/api/TableData/:TableData", function (req, res) {
-//     var chosen = req.params.character;
 
 module.exports=router;
